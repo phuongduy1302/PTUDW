@@ -1,0 +1,410 @@
+/* ================================================= */
+/* === PHẦN 1: CƠ BẢN & HEADER MỚI (ĐÃ CẬP NHẬT) === */
+/* ================================================= */
+
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; 
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ---------- HEADER MỚI (Theo ảnh image_7782bd.png) ---------- */
+.main-header {
+    background: #d9d9d9; /* màu xám nhạt */
+    border: 2px solid #000;
+    border-radius: 8px;
+    width: 100%; 
+    max-width: 1300px; /* Khớp với page-container */
+    margin: 20px auto 20px auto; /* Căn giữa */
+    padding: 10px 20px;
+    box-sizing: border-box; 
+}
+
+/* --- Dòng trên: logo + tiêu đề + icon --- */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    background: #ffeaea; /* Màu hồng nhạt */
+    padding: 6px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.top-bar h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+}
+
+/* --- Bên phải: icon và tên nhân viên --- */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: white;
+    border: 2px solid #000;  /* Cập nhật: viền dày hơn */
+    border-radius: 6px;  /* Cập nhật: bo góc */
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0; /* Cập nhật: Ẩn chữ '?' và 'B' */
+    color: transparent; /* Cập nhật: Ẩn chữ '?' và 'B' */
+    padding: 0;
+    position: relative; /* Thêm để định vị .badge */
+}
+
+.icon-btn:hover {
+    background: #e6e6e6;
+}
+
+.notify {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 4px;    /* Cập nhật: Định vị bên trong nút */
+    right: 4px;   /* Cập nhật: Định vị bên trong nút */
+    width: 6px;
+    height: 6px;
+    background: red;
+    border-radius: 50%;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #bfbfbf; /* Màu xám */
+    border: 2px solid #000; /* Cập nhật: Thêm viền */
+    border-radius: 6px;  /* Cập nhật: Đổi từ 20px (viên thuốc) */
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* --- Thanh menu dưới --- */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    border-top: 2px solid #000; /* Cập nhật: Dòng kẻ dày hơn */
+    padding-top: 8px;
+    margin-top: 5px;
+    gap: 12px;
+}
+
+.nav-bar button {
+    background: #bfbfbf; /* Cập nhật: màu xám nhạt */
+    border: 2px solid #000; /* Cập nhật: viền dày hơn */
+    border-radius: 6px;  /* Cập nhật: bo góc */
+    color: #000;         /* Cập nhật: chữ đen */
+    padding: 6px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logout-btn {
+    margin-left: auto; /* Đẩy nút Đăng xuất sang phải */
+}
+
+.nav-bar button:hover {
+    background: #a6a6a6; /* Cập nhật: hover */
+}
+
+
+/* ================================================= */
+/* === PHẦN 2: BỐ CỤC TRANG & CHUNG (Giữ nguyên) === */
+/* ================================================= */
+
+/* Container chính của trang */
+.page-container {
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.page-container h2 {
+    margin-top: 0;
+    color: #000;
+}
+
+.page-container hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Bố cục 2 cột */
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column {
+    flex: 2; /* Chiếm 2/3 không gian */
+}
+
+.right-column {
+    flex: 1; /* Chiếm 1/3 không gian */
+}
+
+/* Box (cho Form và Info) */
+.form-box,
+.info-box {
+    background: #ffffff;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.form-box h3,
+.info-box h3,
+.table-container h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ================================================= */
+/* === PHẦN 3: FORM & NÚT BẤM (Giữ nguyên) === */
+/* ================================================= */
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Áp dụng chung cho các input */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[list],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Style cho input chỉ đọc (readonly) */
+input[readonly] {
+    background-color: #e9ecef; 
+    cursor: not-allowed;
+    color: #495057;
+}
+
+/* Style cho form group có 2 mục (ví dụ: khoảng thời gian) */
+.form-group.date-range {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+.form-group.date-range div {
+    flex: 1;
+}
+.form-group.date-range span {
+    padding-bottom: 10px; 
+}
+
+/* Phân cách trong form */
+hr.form-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+/* Nút bấm chính (Tạo báo cáo, Ghi nhận, v.v.) */
+.button-group {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; 
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+button.primary {
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+}
+button.primary:hover {
+    background-color: #218838;
+}
+
+button.secondary {
+    background-color: #6c757d; /* Màu xám */
+    color: white;
+}
+button.secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ================================================= */
+/* === PHẦN 4: BẢNG DỮ LIỆU (CHÍNH - Giữ nguyên) === */
+/* ================================================= */
+
+/* Bảng dữ liệu (danh sách lớn ở dưới) */
+.table-container {
+    margin-top: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    overflow-x: auto; 
+}
+
+/* Bảng này dùng chung cho .table-container */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #eee;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+table th {
+    background-color: #f8f9fa; 
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+/* ================================================= */
+/* === PHẦN 5: FORM ĐỘNG (NVL - Giữ nguyên) === */
+/* ================================================= */
+
+.nvl-row {
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+    margin-bottom: 10px; 
+}
+.nvl-row input[type="text"] {
+    flex: 3; 
+}
+.nvl-row input[type="number"] {
+    flex: 1; 
+}
+.remove-nvl-btn {
+    flex-basis: 30px; 
+    height: 30px;
+    padding: 0;
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 30px; 
+}
+.remove-nvl-btn:hover {
+    background-color: #c82333;
+}
+button.secondary.add-button {
+    padding: 5px 10px; 
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-right: 0; 
+}
+
+
+/* ================================================= */
+/* === PHẦN 6: BẢNG PHỤ (KCS - Giữ nguyên) === */
+/* ================================================= */
+
+.inner-table-wrapper {
+    max-height: 300px; 
+    overflow-y: auto;  
+    border: 1px solid #e9ecef; 
+    border-radius: 4px; 
+    margin-top: 15px;   
+}
+
+.inner-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: 0.9em; 
+}
+
+.inner-table th, 
+.inner-table td {
+    padding: 8px 10px; 
+    border-bottom: 1px solid #eee; 
+    text-align: left; 
+}
+
+.inner-table th {
+    background-color: #f8f9fa; 
+    position: sticky; 
+    top: 0; 
+}
+
+.inner-table tr:hover {
+    background-color: #f5f5f5; 
+}
+
+.inner-table .select-button {
+    padding: 4px 8px;
+    font-size: 0.85em;
+    font-weight: 600;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.inner-table .select-button:hover {
+    background-color: #0069d9;
+}
